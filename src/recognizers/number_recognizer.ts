@@ -1,0 +1,12 @@
+import { NumberRecognizer } from 'token-flow';
+import { Token } from 'token-flow';
+import { QUANTITY, QuantityToken } from './quantity_recognizer';
+
+export function CreateNumberRecognizer(): NumberRecognizer {
+    const tokenFactory = (value: number, children: Token[]): QuantityToken => {
+        return { type: QUANTITY, children, value };
+    };
+
+    return new NumberRecognizer(tokenFactory);
+}
+
