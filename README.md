@@ -2,20 +2,6 @@
 
 This sample demonstrates how we can extract catalog entities from recognized speech. 
 
-### Running the Sample
-
-1. Pull and open the short-order repo:
-
-    ```git pull https://github.com/MikeHopcroft/ShortOrder/tree/master/src```
-
-2. Navigate to ```samples/react-sample```:
-
-    ```cd samples/react-sample```
-
-3. Install dependencies: 
-
-    ```npm i```
-
 ## What this Sample Uses
 
 This sample uses:
@@ -23,7 +9,7 @@ This sample uses:
 - [React](https://reactjs.org/) - To minimize the latency/complexity of re-rendering/painting of the DOM 
 - [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript) - To minimize the configuration complexity of an in-browser TypeScript React app
 - [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API) - For in-browser speech recognition
-- short-order - To run transcribed speech through a pipeline that recognizes where entities exist. 
+- token-flow - To run transcribed speech through a pipeline that recognizes where entities exist. 
 
 ## What this Sample Does
 
