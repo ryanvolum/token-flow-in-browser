@@ -1,29 +1,35 @@
 {
-    "name": "token-flow-in-browser",
-    "version": "0.1.0",
-    "private": true,
-    "dependencies": {
-        "@types/react-bootstrap": "^0.32.14",
-        "memfs": "^2.10.1",
-        "path": "^0.12.7",
-        "react": "^16.5.2",
-        "react-bootstrap": "^0.32.4",
-        "react-dom": "^16.5.2",
-        "react-scripts-ts": "3.1.0",
-        "short-order": "https://github.com/MikeHopcroft/ShortOrder",
-        "token-flow": "0.0.23"
-    },
-    "scripts": {
-        "start": "react-scripts-ts start",
-        "build": "react-scripts-ts build",
-        "test": "react-scripts-ts test --env=jsdom",
-        "eject": "react-scripts-ts eject"
-    },
-    "devDependencies": {
-        "@types/jest": "^23.3.5",
-        "@types/node": "^10.12.0",
-        "@types/react": "^16.4.18",
-        "@types/react-dom": "^16.0.9",
-        "typescript": "^3.1.3"
-    }
+  "name": "token-flow-in-browser",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/react-bootstrap": "^0.32.14",
+    "memfs": "^2.10.1",
+    "path": "^0.12.7",
+    "react": "^16.5.2",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.5.2",
+    "react-scripts-ts": "^4.0.8",
+    "short-order": "https://github.com/MikeHopcroft/ShortOrder",
+    "token-flow": "0.0.23"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.5",
+    "@types/node": "^10.12.0",
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
+    "typescript": "^3.1.3"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
