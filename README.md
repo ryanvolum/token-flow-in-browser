@@ -1,4 +1,4 @@
-# React Speech Client Sample for short-order
+# React Speech Client Sample for token-flow
 
 This sample demonstrates how we can extract catalog entities from recognized speech. 
 
