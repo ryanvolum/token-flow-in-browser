@@ -19,7 +19,7 @@ class App extends React.Component<{}, State> {
     private recognition: any;
     private pipeline: Pipeline;
 
-    constructor(props: any) {
+    constructor(props) {
         super(props);
         this.state = {
             isRecording: false,
