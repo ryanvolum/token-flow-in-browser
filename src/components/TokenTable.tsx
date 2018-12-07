@@ -1,25 +1,10 @@
 import * as React from 'react';
 import { Table } from 'react-bootstrap';
 import { Token } from 'token-flow';
+import { FlatToken, IncomingToken } from '../types';
 
-interface Props {
+export interface Props {
     tokens?: Token[]
-}
-
-interface IncomingToken extends Token {
-    children?: IncomingToken[];
-    text: string;
-    pid?: number;
-    name?: string;
-    value?: string | number;
-}
-
-interface FlatToken {
-    text: string;
-    type: string;
-    name?: string;
-    pid?: number;
-    value?: string | number;
 }
 
 export class TokenTable extends React.Component<Props> {
