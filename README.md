@@ -50,13 +50,13 @@ The above approach does have limitations. In the above example, different locati
 
 I want to fly to ```Little Cottonwood Creek Valley Utah``` and I'm coming from ``` Washington-on-the-Brazos, Texas ```.
 
-A model is only as good as its examples, and when training data has significant outliers, they often fail to get picked up. Alternatively, envision a bot which asks a user for an order ("What would you like to order"). The user might respond, "A burger", or "A burger please" or "a burger deluxe". Unless explicitly trained for this scenario, this model will either mistakenly pick up ```burger please``` as an ```item``` entity or miss the "deluxe" in ```burger deluxe```. Attempting to train a model on every possible example often leads to overfitting and can't be the answer. 
+A model is only as good as its examples, and when training data has significant outliers, they often fail to get picked up. Alternatively, envision a bot which asks a user for an order ("What would you like to order"). The user might respond, "A burger", or "A burger please" or "a burger deluxe". Unless explicitly trained for this scenario, this model will either mistakenly pick up ```burger please``` as an ```item``` entity or miss the "deluxe" in ```burger deluxe```. Attempting to train a model on every possible example often leads to overfitting. 
 
 Without any understanding the underlying entities, an NLP engine can only make guesses based on a subset of examples. But if we have a constrained number of entities in a dataset, we should be able to use that knowledge to inform our entity recognition. 
 
 ### This Approach
 
-If you have a constrained number of entities in a dataset, then you should be able to identify where entities lie without (or before) passing an utterance into an NLP model. 
+If we have a constrained number of entities in a dataset, then we should be able to identify where entities lie without (or before) passing an utterance into an NLP model. 
 
 Token-flow provides utilities to identify where entities exist in an utterance. It takes a dataset (a catalog of entities) and creates a tokenizer. The tokenizer takes an utterance and tokenizes all of the known entities in that utterance. In compiler terms, token-flow can be thought of as a lexer - the output is a series of tokens that a parser can then reason over.
 
