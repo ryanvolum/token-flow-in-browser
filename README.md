@@ -1,13 +1,14 @@
 # React Speech Client Sample for token-flow
 
-This sample demonstrates how we can extract catalog entities from recognized speech. 
+This project demonstrates how we can do real-time in-browser entity extraction from speech. 
 
 ## Running this Sample
-
+1. Clone sample and navigate to project directory
+2. Run ```npm install```
+3. Run ```npm run start```
+4. Start ordering items from the catalog found in `src/data/menu.json`
 
 ## What this Sample Uses
-
-This sample uses:
 
 - [React](https://reactjs.org/) - To minimize the latency/complexity of re-rendering/painting of the DOM 
 - [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript) - To minimize the configuration complexity of an in-browser TypeScript React app
@@ -20,26 +21,14 @@ This sample takes inputted speech audio, transcribes it, and runs it through a p
 
 ## Data-driven
 
-At it's core, this sample demonstrates how we can extract entities based on some underlying data-store. If we changed our catalog of items, our tokenizer will now recognize different items. This is expressly _not_ using machine learning, so there is no training step. It relies on token-flow, which uses a varitety of search techniques, to determine where in an utterance a token exists. 
+At its core, this sample demonstrates how we can extract entities based on some underlying data-store. If we changed our catalog of items, our tokenizer will now recognize different items. This is expressly _not_ using machine learning, so there is no training step. It relies on token-flow, which uses a varitety of search techniques to determine where in an utterance a token exists. In compiler terms, this can be compared to a lexer, which extracts relevant information that can then be reasoned over by a parser. 
 
 ## Low Latency
 
 This sample browserifies all tokenization, so everything is running on the client. Further, it uses the Web Speech API to stream recognition. Finally, the rendered results use React and are fully state-driven, so the token table updates as the user is speaking. 
 
-### Speech as an Input Modality 
-As an input modality, speech is useful in:
-
-1. Hands-off scenarios 
-    - Speaking to a conversational agent in a car
-    - Asking questions of a conversational agent while cooking
-
-2. Scenarios where speech is already the primary mode of communication
-    - Help desk phone calls
-    - Food ordering
-
-Speech enabled user interfaces have the interesting side-effect of text normalization. Speech recognition services will never misspell words. Further, most SR services allow the developer to define what format of response they want. With regard to numbers, for example, SR services generally allow developers to define whether they want numeric or lexical representation (12 vs 'twelve'). When building speech enabled assistants we then need to ensure that components downstream of speech expect the normalized speech recognition output. 
-
 ## Entity Extraction 
+What makes this approach fundamentally unique is that we aren't using patterns or machine learning to determine where in an utterance some entity lies. Let's take a look at traditional entity extraction approaches, their limitations, and how this approach resolves these issues. 
 
 ### Traditional Approach
 
@@ -67,4 +56,18 @@ Without any understanding the underlying entities, an NLP engine can only make g
 
 If you have a constrained number of entities in a dataset, then you should be able to identify where entities lie without (or before) passing an utterance into an NLP model. 
 
-Token-flow provides utilities to identify where entities exist in an utterance. It takes a dataset (a catalog of entities) and creates a tokenizer. The tokenizer takes an utterance and tokenizes all of the known entities in that utterance. In compiler terms, this package can be thought of as a lexer - the output is a series of tokens that a parser can then reason over. 
+Token-flow provides utilities to identify where entities exist in an utterance. It takes a dataset (a catalog of entities) and creates a tokenizer. The tokenizer takes an utterance and tokenizes all of the known entities in that utterance. In compiler terms, token-flow can be thought of as a lexer - the output is a series of tokens that a parser can then reason over.
+
+### Speech as an Input Modality 
+As an input modality, speech is useful in:
+
+1. Hands-off scenarios 
+    - Speaking to a conversational agent in a car
+    - Asking questions of a conversational agent while cooking
+
+2. Scenarios where speech is already the primary mode of communication
+    - Help desk phone calls
+    - Food ordering
+
+Speech enabled user interfaces have the interesting side-effect of text normalization. Speech recognition services will never misspell words. Further, most SR services allow the developer to define what format of response they want. With regard to numbers, for example, SR services generally allow developers to define whether they want numeric or lexical representation (12 vs 'twelve'). When building speech enabled assistants we then need to ensure that components downstream of speech expect the normalized speech recognition output. 
+
