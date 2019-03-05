@@ -34,7 +34,7 @@ What makes this approach fundamentally unique is that we aren't using patterns o
 
 ### Traditional Approach
 
-Traditional NLP takes example utterances with highlighted entities to guess where an entity might lie: 
+Traditional NLP takes example utterances with highlighted entities to train a model that guesses where an entity might lie: 
 
 I want to book a flight from ```Seattle``` to ```Tokyo```.
 
