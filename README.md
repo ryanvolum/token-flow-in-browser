@@ -2,6 +2,9 @@
 
 This sample demonstrates how we can extract catalog entities from recognized speech. 
 
+## Running this Sample
+
+
 ## What this Sample Uses
 
 This sample uses:
@@ -9,16 +12,19 @@ This sample uses:
 - [React](https://reactjs.org/) - To minimize the latency/complexity of re-rendering/painting of the DOM 
 - [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript) - To minimize the configuration complexity of an in-browser TypeScript React app
 - [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API) - For in-browser speech recognition
-- [token-flow](https://www.npmjs.com/package/token-flow) - To run transcribed speech through a pipeline that recognizes where entities exist. 
+- [token-flow](https://www.npmjs.com/package/token-flow) - To run transcribed speech through a pipeline that recognizes where entities exist
 
 ## What this Sample Does
 
-This sample takes inputted speech, transcribes it, and runs it through a pipeline of tokenizers which identify series of wods that exist in a catalog and tokenize them. The catalog that this sample uses is a theoretical restaurant menu 
+This sample takes inputted speech audio, transcribes it, and runs it through a pipeline of tokenizers which identify and tokenize items that exist in a catalog. This sample includes a catalog of items from a faux restaurant. Run the sample and place orders (e.g. "I would like a dakota burger and fries") to observe the real-time recognition capabilities afforded from this approach. 
 
 ## Data-driven
 
+At it's core, this sample demonstrates how we can extract entities based on some underlying data-store. If we changed our catalog of items, our tokenizer will now recognize different items. This is expressly _not_ using machine learning, so there is no training step. It relies on token-flow, which uses a varitety of search techniques, to determine where in an utterance a token exists. 
+
 ## Low Latency
 
+This sample browserifies all tokenization, so everything is running on the client. Further, it uses the Web Speech API to stream recognition. Finally, the rendered results use React and are fully state-driven, so the token table updates as the user is speaking. 
 
 ### Speech as an Input Modality 
 As an input modality, speech is useful in:
@@ -31,7 +37,7 @@ As an input modality, speech is useful in:
     - Help desk phone calls
     - Food ordering
 
-Speech enabled user interfaces have the interesting side-effect of text normalization. Speech recognition services will never misspell words. Further, most SR services allow the developer to define what format of response they want. With regard to numbers, for example, SR services generally allow developers to define whether they want numeric or lexical representation (12 vs 'twelve'). When building speech enabled assistants we then need to ensuer that components downstream of speech expect the normalized speech recognition output. 
+Speech enabled user interfaces have the interesting side-effect of text normalization. Speech recognition services will never misspell words. Further, most SR services allow the developer to define what format of response they want. With regard to numbers, for example, SR services generally allow developers to define whether they want numeric or lexical representation (12 vs 'twelve'). When building speech enabled assistants we then need to ensure that components downstream of speech expect the normalized speech recognition output. 
 
 ## Entity Extraction 
 
@@ -61,4 +67,4 @@ Without any understanding the underlying entities, an NLP engine can only make g
 
 If you have a constrained number of entities in a dataset, then you should be able to identify where entities lie without (or before) passing an utterance into an NLP model. 
 
-This package provides utilities to identify where entities stand in an utterance. It takes a dataset (a catalog of entities) and creates a tokenizer. The tokenizer takes an utterance and tokenizes all of the known entities in that utterance. In compiler terms, this package can be thought of as a lexer - the output is a series of tokens that a parser can then reason over. 
+Token-flow provides utilities to identify where entities exist in an utterance. It takes a dataset (a catalog of entities) and creates a tokenizer. The tokenizer takes an utterance and tokenizes all of the known entities in that utterance. In compiler terms, this package can be thought of as a lexer - the output is a series of tokens that a parser can then reason over. 
