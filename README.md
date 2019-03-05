@@ -9,7 +9,7 @@ This sample uses:
 - [React](https://reactjs.org/) - To minimize the latency/complexity of re-rendering/painting of the DOM 
 - [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript) - To minimize the configuration complexity of an in-browser TypeScript React app
 - [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API) - For in-browser speech recognition
-- token-flow - To run transcribed speech through a pipeline that recognizes where entities exist. 
+- [token-flow](https://www.npmjs.com/package/token-flow) - To run transcribed speech through a pipeline that recognizes where entities exist. 
 
 ## What this Sample Does
 
