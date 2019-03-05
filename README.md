@@ -19,7 +19,7 @@ This project demonstrates how we can do real-time in-browser entity extraction f
 
 This sample takes inputted speech audio, transcribes it, and runs it through a pipeline of tokenizers which identify and tokenize items that exist in a catalog. This sample includes a catalog (`menu.json`) of items from a faux restaurant. Run the sample and place orders (e.g. "I would like a dakota burger and fries") to observe the real-time recognition and lexing capabilities afforded from this approach:
 
-
+![Demo GIF](token-flow-in-browser.gif)
 
 ## Data-driven
 
